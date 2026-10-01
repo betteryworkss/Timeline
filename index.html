@@ -17,10 +17,10 @@
        [공통] 디자인 토큰 / 리셋
        ========================================================= */
     :root {
-      --midnight: #191970;          /* 메인 컬러: 미드나잇블루 */
+      --midnight: #191970;
       --midnight-deep: #0f0f4d;
-      --accent: #ff4500;            /* 보조 컬러: 오렌지레드 */
-      --mid: #3b3fa8;               /* 중간 톤 블루 (태그 구분용) */
+      --accent: #ff4500;
+      --mid: #3b3fa8;
       --bg: #f7f8fc;
       --tint: #eceefa;
       --ink: #191970;
@@ -33,10 +33,7 @@
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-padding-top: var(--header-h); }
-    body {
-      margin: 0; font-family: var(--font); font-size: 16px; line-height: 1.7;
-      color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased;
-    }
+    body { margin: 0; font-family: var(--font); font-size: 16px; line-height: 1.7; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
     body.no-scroll { overflow: hidden; }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
@@ -47,11 +44,7 @@
     /* =========================================================
        [헤더]
        ========================================================= */
-    .site-header {
-      position: fixed; inset: 0 0 auto 0; height: var(--header-h); z-index: 100;
-      color: var(--midnight); background: transparent;
-      transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
-    }
+    .site-header { position: fixed; inset: 0 0 auto 0; height: var(--header-h); z-index: 100; color: var(--midnight); background: transparent; transition: background-color .3s ease, color .3s ease, box-shadow .3s ease; }
     .site-header.is-scrolled { background: var(--midnight-deep); color: #fff; box-shadow: 0 4px 18px rgba(15,15,77,.35); }
     .header-inner { max-width: 1120px; height: 100%; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
     .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.01em; }
@@ -82,18 +75,15 @@
     /* =========================================================
        [공통 버튼 / 카드 / 폼]
        ========================================================= */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 24px;
-      border: 1.5px solid var(--midnight); border-radius: var(--radius); background: transparent; color: var(--midnight);
-      font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer;
-      transition: background-color .3s ease, color .3s ease, border-color .3s ease, transform .3s ease;
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 24px; border: 1.5px solid var(--midnight); border-radius: var(--radius); background: transparent; color: var(--midnight); font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color .3s ease, color .3s ease, border-color .3s ease, transform .3s ease; }
     .cta-grid .btn { display: flex; }
     .btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); }
     .btn:active { transform: translateY(0); }
     .btn--primary { background: var(--midnight); color: #fff; }
     .btn--danger { border-color: var(--line); color: var(--muted); }
     .btn--small { min-height: 48px; padding: 8px 18px; }
+    .mini { min-height: 44px; padding: 6px 14px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; color: var(--muted); font-family: inherit; font-size: .9rem; font-weight: 500; cursor: pointer; transition: all .25s ease; }
+    .mini:hover { border-color: var(--accent); color: var(--accent); }
 
     .card { display: block; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; transition: border-color .3s ease, transform .3s ease; }
     a.card:hover { border-color: var(--accent); transform: translateY(-3px); }
@@ -103,11 +93,7 @@
     .card-cap span { color: var(--muted); font-size: .95rem; }
 
     label.field { display: block; margin-bottom: 16px; font-weight: 600; font-size: .95rem; }
-    .field input, .field textarea, .field select {
-      display: block; width: 100%; margin-top: 6px; min-height: 48px; padding: 10px 14px;
-      border: 1.5px solid var(--line); border-radius: var(--radius); background: #fff; color: var(--ink);
-      font-family: inherit; font-size: 1rem; font-weight: 400; transition: border-color .25s ease;
-    }
+    .field input, .field textarea { display: block; width: 100%; margin-top: 6px; min-height: 48px; padding: 10px 14px; border: 1.5px solid var(--line); border-radius: var(--radius); background: #fff; color: var(--ink); font-family: inherit; font-size: 1rem; font-weight: 400; transition: border-color .25s ease; }
     .field textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
     .field input:focus, .field textarea:focus { border-color: var(--midnight); outline: none; box-shadow: 0 0 0 3px rgba(25,25,112,.15); }
     .hint { color: var(--muted); font-size: .9rem; margin: -8px 0 16px; }
@@ -120,6 +106,11 @@
     .seg span { display: inline-flex; align-items: center; min-height: 48px; padding: 8px 20px; border: 1.5px solid var(--line); border-radius: var(--radius); background: #fff; cursor: pointer; font-weight: 600; transition: all .25s ease; }
     .seg input:checked + span { background: var(--midnight); border-color: var(--midnight); color: #fff; }
     .seg input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .icon-pick label { position: relative; }
+    .icon-pick input { position: absolute; opacity: 0; inset: 0; }
+    .icon-pick .avatar { border: 2px solid transparent; cursor: pointer; }
+    .icon-pick input:checked + .avatar { background: var(--midnight); color: #fff; }
+    .icon-pick input:focus-visible + .avatar { outline: 3px solid var(--accent); outline-offset: 2px; }
 
     /* =========================================================
        [서브 페이지 공통]
@@ -138,9 +129,11 @@
     .info-card { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
     .info-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
     .info-card p { color: var(--muted); }
+    .state { min-height: 60vh; display: grid; place-items: center; text-align: center; color: var(--muted); }
+    .state .btn { margin-top: 20px; }
 
     /* =========================================================
-       [Event] 달력 + 일정 버튼
+       [Event]
        ========================================================= */
     .cal { max-width: 720px; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
     .cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
@@ -155,50 +148,44 @@
     .cal-day.is-today { box-shadow: inset 0 0 0 1.5px var(--midnight); }
     .cal-day.has-event::after { content: ""; position: absolute; left: 50%; bottom: 6px; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: var(--accent); }
     .cal-day.is-sel { background: var(--midnight); color: #fff; }
-    .cal-note { margin-top: 14px; min-height: 1.7em; color: var(--muted); font-size: .95rem; }
-    .event-btn {
-      display: flex; flex-direction: column; gap: 6px; width: 100%; padding: 20px; text-align: left;
-      border: 1.5px solid var(--line); border-radius: var(--radius); background: #fff; color: inherit;
-      font-family: inherit; font-size: 1rem; cursor: pointer;
-      transition: border-color .3s ease, transform .3s ease, background-color .3s ease;
-    }
+    .cal-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 14px; }
+    .cal-note { color: var(--muted); font-size: .95rem; flex: 1 1 220px; }
+    .ev-item { display: flex; flex-direction: column; gap: 8px; }
+    .ev-tools { display: flex; gap: 8px; }
+    .event-btn { display: flex; flex-direction: column; gap: 6px; width: 100%; padding: 20px; text-align: left; border: 1.5px solid var(--line); border-radius: var(--radius); background: #fff; color: inherit; font-family: inherit; font-size: 1rem; cursor: pointer; transition: border-color .3s ease, transform .3s ease, background-color .3s ease; }
     .event-btn:hover { border-color: var(--accent); transform: translateY(-2px); }
     .event-btn.is-active { border-color: var(--midnight); background: var(--tint); }
     .event-btn.is-past { opacity: .6; }
     .ev-date { font-size: 1.15rem; font-weight: 700; color: var(--accent); }
-    .ev-title { font-size: 1.1rem; font-weight: 600; line-height: 1.4; }
-    .ev-meta { color: var(--muted); font-size: .95rem; }
+    .ev-title { font-size: 1.1rem; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
+    .ev-meta { color: var(--muted); font-size: .95rem; overflow-wrap: anywhere; }
     .ev-meta b { display: inline-block; min-width: 2.4em; margin-right: 6px; font-weight: 600; color: var(--midnight); }
 
     /* =========================================================
-       [Book] 표지 + 제목 / 상세 / 후기
+       [Book]
        ========================================================= */
     .book-card { display: block; }
     .book-card img { width: 100%; aspect-ratio: 5 / 7; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); transition: transform .3s ease, border-color .3s ease; }
     .book-card:hover img { transform: translateY(-4px); border-color: var(--accent); }
-    .book-title { display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; }
+    .book-title { display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
     .book-grid { gap: 32px 20px; }
     .book-detail { display: grid; grid-template-columns: 1fr; gap: 32px; }
     .book-detail .cover { width: min(260px, 100%); border-radius: var(--radius); border: 1px solid var(--line); cursor: zoom-in; }
-    .book-detail h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+    .book-detail h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; overflow-wrap: anywhere; }
     .book-author { margin-top: 8px; color: var(--muted); }
     .review-list { display: grid; gap: 12px; margin-top: 20px; }
     .review { padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
     .review p { white-space: pre-wrap; overflow-wrap: anywhere; }
-    .who { display: flex; gap: 12px; align-items: baseline; margin-bottom: 6px; font-size: .95rem; }
+    .who { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; font-size: .95rem; }
     .who b { font-weight: 600; }
     .who span { color: var(--muted); }
+    .who .mini { margin-left: auto; }
     .more-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 
     /* =========================================================
-       [People] 아이콘 + 닉네임
+       [People]
        ========================================================= */
-    .person {
-      display: flex; align-items: center; gap: 16px; width: 100%; padding: 16px 20px; text-align: left;
-      border: 1px solid var(--line); border-radius: var(--radius); background: #fff; color: inherit;
-      font-family: inherit; font-size: 1.05rem; font-weight: 600; cursor: pointer;
-      transition: border-color .3s ease, transform .3s ease;
-    }
+    .person { display: flex; align-items: center; gap: 16px; width: 100%; padding: 16px 20px; text-align: left; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; color: inherit; font-family: inherit; font-size: 1.05rem; font-weight: 600; cursor: pointer; transition: border-color .3s ease, transform .3s ease; overflow-wrap: anywhere; }
     .person:hover { border-color: var(--accent); transform: translateY(-2px); }
     .avatar { flex: none; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--tint); color: var(--midnight); transition: background-color .3s ease, color .3s ease; }
     .person:hover .avatar { background: var(--accent); color: #fff; }
@@ -208,13 +195,15 @@
     .stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
     .stats span { padding: 4px 12px; border-radius: 999px; background: var(--tint); font-size: .9rem; font-weight: 500; }
     .history { padding-left: 22px; border-left: 1px solid var(--line); }
-    .history li { position: relative; padding-bottom: 18px; }
-    .history li:last-child { padding-bottom: 0; }
+    .history li { position: relative; padding-bottom: 18px; display: flex; gap: 10px; align-items: flex-start; justify-content: space-between; }
+    .history li > div { min-width: 0; overflow-wrap: anywhere; }
     .history li::before { content: ""; position: absolute; left: -28px; top: 9px; width: 11px; height: 11px; border-radius: 50%; background: #fff; border: 2px solid var(--accent); }
     .history time { display: block; color: var(--muted); font-size: .9rem; }
+    .modal-sub { margin: 28px 0 12px; font-size: 1.05rem; font-weight: 600; }
+    .inline-form { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 20px; }
 
     /* =========================================================
-       [Timeline Life] 자유게시판
+       [Timeline Life]
        ========================================================= */
     .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
     .tab { display: inline-flex; align-items: center; min-height: 48px; padding: 8px 18px; border: 1.5px solid var(--line); border-radius: var(--radius); background: #fff; font-weight: 600; transition: all .25s ease; }
@@ -243,6 +232,7 @@
        ========================================================= */
     .site-footer { padding: 56px 24px; background: var(--midnight-deep); color: #d9dbee; text-align: center; font-size: .95rem; }
     .site-footer strong { color: #fff; font-weight: 600; }
+    .mode-note { margin-top: 8px; color: #ffb199; }
     .to-top { position: fixed; right: 20px; bottom: 20px; z-index: 90; width: 52px; height: 52px; border: 0; border-radius: var(--radius); background: var(--accent); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .3s ease, transform .3s ease, visibility .3s, background-color .3s ease; }
     .to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
     .to-top:hover { background: var(--midnight); }
@@ -272,20 +262,14 @@
       .book-detail { grid-template-columns: 260px 1fr; }
       .topic-head { grid-template-columns: 320px 1fr; }
     }
-
-    /* =========================================================
-       [반응형] 데스크톱 1025px 이상: 한 줄에 3개
-       ========================================================= */
+    /* [반응형] 데스크톱 1025px 이상: 한 줄에 3개 */
     @media (min-width: 1025px) {
       .cta-grid, .gallery, .grid { grid-template-columns: repeat(3, 1fr); }
       .hero { padding-top: calc(var(--header-h) + 140px); padding-bottom: 160px; }
       .book-detail { grid-template-columns: 260px 1fr; gap: 56px; }
       .topic-head { grid-template-columns: 320px 1fr; }
     }
-
-    /* =========================================================
-       [반응형] 모바일 640px 이하: 한 줄에 1개 + 햄버거 메뉴
-       ========================================================= */
+    /* [반응형] 모바일 640px 이하: 한 줄에 1개 + 햄버거 메뉴 */
     @media (max-width: 640px) {
       .header-inner { padding: 0 18px; }
       .hero { padding: calc(var(--header-h) + 64px) 18px 88px; }
@@ -295,10 +279,9 @@
       .gallery { margin-top: 72px; }
       .section-title { margin-top: 56px; }
       .modal-panel { padding: 28px 20px 22px; }
-      .book-grid { grid-template-columns: repeat(2, 1fr); }  /* 표지 목록만 모바일 2열(표지가 너무 커지는 것 방지) */
+      .book-grid { grid-template-columns: repeat(2, 1fr); }
       .form-actions .btn { flex: 1; }
       .post-row { align-items: flex-start; }
-
       .hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 48px; height: 48px; margin-right: -10px; padding: 0 10px; cursor: pointer; }
       .hamburger span { display: block; height: 2px; border-radius: 2px; background: currentColor; transition: transform .3s ease, opacity .3s ease; }
       .nav-toggle:focus-visible + .hamburger { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: var(--radius); }
@@ -310,14 +293,13 @@
       .nav ul { flex-direction: column; gap: 4px; }
       .nav a { min-height: 48px; display: flex; align-items: center; font-size: 1rem; }
     }
-
     @media (prefers-reduced-motion: reduce) { * { transition-duration: .01ms !important; scroll-behavior: auto !important; } }
   </style>
 </head>
 <body>
 
   <!-- =========================================================
-       [헤더] 로고 + 네비게이션 (주소 해시로 페이지 전환)
+       [헤더]
        ========================================================= -->
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
@@ -343,61 +325,59 @@
   <footer class="site-footer">
     <p><strong>Timeline</strong> 교환독서회</p>
     <p>&copy; 2026 Timeline. 함께 책을 읽어요.</p>
+    <p class="mode-note" id="modeNote" hidden></p>
   </footer>
 
-  <!-- [위로 가기 버튼] -->
   <button type="button" class="to-top" id="toTop" aria-label="맨 위로 가기"></button>
 
-  <!-- [라이트박스] 표지 이미지 확대 -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기">
     <button type="button" class="lightbox-close" id="lightboxClose" aria-label="닫기">&times;</button>
     <img class="lightbox-img" id="lightboxImg" alt="">
   </div>
 
-  <!-- [모달] 글쓰기·후기 등록·이력 보기 공용 -->
   <div class="modal" id="modal" role="dialog" aria-modal="true">
     <div class="modal-panel" id="modalPanel"></div>
   </div>
 
-  <!-- [알림 토스트] -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <!-- =========================================================
        [자바스크립트] 순수 JS (ES6+), 외부 라이브러리 없음
        ========================================================= -->
   <script>
+    // =====================================================================
+    // ★ 여기만 채우면 모두가 같은 데이터를 봅니다 (README.md 참고)
+    //   Supabase → Project Settings → API 에서 복사해 붙여넣으세요.
+    //   비워 두면 '데모 모드'(내 브라우저에만 저장)로 동작합니다.
+    // =====================================================================
+    const CONFIG = {
+      SUPABASE_URL: '',   // 예: 'https://abcdefgh.supabase.co'
+      SUPABASE_KEY: '',   // anon(legacy) 키 또는 publishable 키
+    };
+
     // ================= 0. 공용 도구 =================
     const $ = (s, r = document) => r.querySelector(s);
     const view = $('#view');
     const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-    const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+    const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
     const pad = (n) => String(n).padStart(2, '0');
-    const fmtDate = (iso) => { const d = new Date(iso); return `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())}`; };
-    const ymd = (y, m, d) => `${y}-${pad(m + 1)}-${pad(d)}`;                 // m은 0부터 시작
+    const fmtDate = (iso) => { const d = new Date(iso); return isNaN(d) ? '' : `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())}`; };
+    const ymd = (y, m, d) => `${y}-${pad(m + 1)}-${pad(d)}`;
+    const todayStr = () => { const n = new Date(); return ymd(n.getFullYear(), n.getMonth(), n.getDate()); };
     const evLabel = (s) => { const [y, m, d] = s.split('-').map(Number); return `${m}월 ${d}일 (${'일월화수목금토'[new Date(y, m - 1, d).getDay()]})`; };
     const svgUri = (svg) => `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+    const newest = (a, b) => (b.at || '').localeCompare(a.at || '');
+    const oldest = (a, b) => (a.at || '').localeCompare(b.at || '');
 
     let toastTimer;
     const toast = (msg) => {
       const t = $('#toast');
-      t.textContent = msg;
-      t.classList.add('is-show');
+      t.textContent = msg; t.classList.add('is-show');
       clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => t.classList.remove('is-show'), 2600);
+      toastTimer = setTimeout(() => t.classList.remove('is-show'), 2800);
     };
 
-    // ================= 1. 고정 데이터 (일정 / 멤버 / 주제) =================
-    // 일정: 날짜, 시간, 위치, 제목 (샘플입니다. 이 배열만 고치면 달력과 버튼에 반영돼요)
-    const EVENTS = [
-      { date: '2026-10-10', time: '14:00', place: '서가 라운지 (서울 마포구)', title: '가을 정기 모임: 첫 교환식' },
-      { date: '2026-10-24', time: '19:30', place: '온라인 (화상 모임)', title: '밑줄 나누는 밤' },
-      { date: '2026-11-07', time: '15:00', place: '서가 라운지 (서울 마포구)', title: '「자기만의 방」 함께 읽기' },
-      { date: '2026-11-21', time: '11:00', place: '한강공원 책 피크닉', title: '야외 교환독서' },
-      { date: '2026-12-05', time: '16:00', place: '서가 라운지 (서울 마포구)', title: '올해의 책 투표' },
-      { date: '2026-12-19', time: '18:00', place: '서가 라운지 (서울 마포구)', title: '송년 책 교환 파티' },
-    ];
-
-    // 멤버 아이콘 (24x24 선 아이콘)
+    // ================= 1. 고정 자료 (아이콘 / 게시판 주제) =================
     const ICONS = {
       book: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M8 7h7"/>',
       pen: '<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/>',
@@ -408,17 +388,7 @@
     };
     const iconSvg = (k) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k] || ICONS.book}</svg>`;
 
-    // 멤버: 닉네임, 아이콘, 가입일, 이력(샘플)
-    const PEOPLE = [
-      { id: 'u1', nick: '새벽서가', icon: 'book', joined: '2026.03.14', history: [['2026.03', '모임에 처음 참여했어요'], ['2026.05', '「자기만의 방」을 가장 먼저 돌려 읽었어요'], ['2026.09', '가을 정기 모임을 진행했어요']] },
-      { id: 'u2', nick: '밑줄러', icon: 'pen', joined: '2026.03.14', history: [['2026.03', '창립 멤버로 합류했어요'], ['2026.06', '밑줄 모음 기록을 시작했어요']] },
-      { id: 'u3', nick: '오월', icon: 'leaf', joined: '2026.04.02', history: [['2026.04', '첫 책을 교환했어요'], ['2026.08', '야외 교환독서를 기획했어요']] },
-      { id: 'u4', nick: '책갈피', icon: 'bookmark', joined: '2026.05.20', history: [['2026.05', '모임에 합류했어요'], ['2026.07', '낭독회를 열었어요']] },
-      { id: 'u5', nick: '달그림자', icon: 'moon', joined: '2026.06.11', history: [['2026.06', '온라인 모임으로 참여를 시작했어요']] },
-      { id: 'u6', nick: '낮잠', icon: 'coffee', joined: '2026.08.30', history: [['2026.08', '가장 최근에 합류했어요']] },
-    ];
-
-    // 게시판 주제 ↔ 갤러리 페이지 연동: 추천=돌아온 책 / 밑줄=쌓이는 밑줄 / 토론=펼친 페이지
+    // 추천=돌아온 책 / 밑줄=쌓이는 밑줄 / 토론=펼친 페이지
     const TOPICS = {
       recommend: {
         label: '추천', page: '돌아온 책', desc: '돌려 읽고 돌아온 책 중, 다음 사람에게 건네고 싶은 책을 추천해요.', alt: '타임라인 위에 점이 찍힌 일러스트',
@@ -434,57 +404,142 @@
       },
     };
 
-    // ================= 2. 저장소 (브라우저 localStorage) =================
-    const KEY = 'timeline.v1';
+    // ================= 2. 데이터 저장소 =================
+    // 모든 데이터는 {id, kind, data} 행(row) 하나로 저장됩니다.
+    // kind: book / review / post / comment / event / person / history
+    const KINDS = ['book', 'review', 'post', 'comment', 'event', 'person', 'history'];
+    const REMOTE = Boolean(CONFIG.SUPABASE_URL && CONFIG.SUPABASE_KEY);
+
+    // ---- 2-1. 서버 모드: Supabase REST (fetch만 사용) ----
+    const BASE = CONFIG.SUPABASE_URL.replace(/\/+$/, '');
+    const HEAD = {
+      apikey: CONFIG.SUPABASE_KEY,
+      'Content-Type': 'application/json',
+      ...(CONFIG.SUPABASE_KEY.startsWith('eyJ') ? { Authorization: `Bearer ${CONFIG.SUPABASE_KEY}` } : {}),
+    };
+    const ok = (r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r; };
+    const remote = {
+      // 변경 감지용 가벼운 요청 (id + 수정시각 + 총 개수)
+      async signature() {
+        const r = ok(await fetch(`${BASE}/rest/v1/items?select=id,updated_at&order=updated_at.desc,id.asc&limit=1000`, { headers: { ...HEAD, Prefer: 'count=exact' } }));
+        const list = await r.json();
+        return `${r.headers.get('content-range') || ''}|${list.map((x) => x.id + x.updated_at).join(',')}`;
+      },
+      async fetchAll() {
+        let out = [], from = 0;
+        for (;;) {
+          const r = ok(await fetch(`${BASE}/rest/v1/items?select=id,kind,data&order=updated_at.asc,id.asc&limit=1000&offset=${from}`, { headers: HEAD }));
+          const part = await r.json();
+          out = out.concat(part);
+          if (part.length < 1000) return out;
+          from += 1000;
+        }
+      },
+      async upsert(kind, id, data) {
+        ok(await fetch(`${BASE}/rest/v1/items`, {
+          method: 'POST',
+          headers: { ...HEAD, Prefer: 'resolution=merge-duplicates,return=minimal' },
+          body: JSON.stringify({ id, kind, data, updated_at: new Date().toISOString() }),
+        }));
+      },
+      async remove(ids) {
+        ok(await fetch(`${BASE}/rest/v1/items?id=in.(${ids.map(encodeURIComponent).join(',')})`, { method: 'DELETE', headers: HEAD }));
+      },
+    };
+
+    // ---- 2-2. 데모 모드: 내 브라우저(localStorage)에만 저장 ----
+    const LKEY = 'timeline.rows.v2';
+    const readLocal = () => { try { const r = localStorage.getItem(LKEY); return r ? JSON.parse(r) : null; } catch { return null; } };
+    const writeLocal = (rows) => localStorage.setItem(LKEY, JSON.stringify(rows)); // 실패 시 오류 발생
+    const local = {
+      async signature() { try { return localStorage.getItem(LKEY) || ''; } catch { return ''; } },
+      async fetchAll() { let r = readLocal(); if (!r) { r = seedRows(); try { writeLocal(r); } catch { /* 무시 */ } } return r; },
+      async upsert(kind, id, data) {
+        const r = readLocal() || [];
+        const i = r.findIndex((x) => x.id === id);
+        if (i >= 0) r[i] = { id, kind, data }; else r.push({ id, kind, data });
+        writeLocal(r);
+      },
+      async remove(ids) { writeLocal((readLocal() || []).filter((x) => !ids.includes(x.id))); },
+    };
+    const backend = REMOTE ? remote : local;
+
+    // 데모 모드 첫 실행 때만 들어가는 샘플 데이터
+    const seedRows = () => {
+      const R = [];
+      const add = (kind, id, data) => R.push({ id, kind, data });
+      [['2026-10-10', '14:00', '서가 라운지 (서울 마포구)', '가을 정기 모임: 첫 교환식'], ['2026-10-24', '19:30', '온라인 (화상 모임)', '밑줄 나누는 밤'], ['2026-11-07', '15:00', '서가 라운지 (서울 마포구)', '「자기만의 방」 함께 읽기'], ['2026-11-21', '11:00', '한강공원 책 피크닉', '야외 교환독서']]
+        .forEach(([date, time, place, title], i) => add('event', `e${i}`, { date, time, place, title, at: `2026-09-01T00:0${i}:00` }));
+      [['u1', '새벽서가', 'book', '2026-03-14', ['2026.03|모임에 처음 참여했어요', '2026.05|「자기만의 방」을 가장 먼저 돌려 읽었어요']],
+       ['u2', '밑줄러', 'pen', '2026-03-14', ['2026.06|밑줄 모음 기록을 시작했어요']],
+       ['u3', '오월', 'leaf', '2026-04-02', ['2026.08|야외 교환독서를 기획했어요']]]
+        .forEach(([id, nick, icon, joined, hist], i) => {
+          add('person', id, { nick, icon, joined, at: `2026-03-0${i + 1}T00:00:00` });
+          hist.forEach((h, j) => { const [date, text] = h.split('|'); add('history', `h${id}${j}`, { personId: id, date, text, at: `2026-04-0${j + 1}T00:00:0${i}` }); });
+        });
+      add('book', 'b1', { title: '자기만의 방', author: '버지니아 울프', cover: null, at: '2026-09-01T10:00:00' });
+      add('book', 'b2', { title: '데미안', author: '헤르만 헤세', cover: null, at: '2026-08-12T10:00:00' });
+      [['새벽서가', '글을 쓰려면 돈과 자기만의 공간이 필요하다는 이야기에 오래 머물렀어요.'], ['오월', '밑줄이 가장 많이 그어진 책이 된 것 같아요.'], ['밑줄러', '두 번째 읽는데, 처음에는 놓쳤던 유머가 보여요.'], ['새벽서가', '강연을 옮긴 글이라 소리 내어 읽으면 더 좋아요.']]
+        .forEach(([nick, text], i) => add('review', `r${i}`, { bookId: 'b1', nick, text, at: `2026-09-2${i}T21:00:00` }));
+      add('post', 'p1', { topic: 'recommend', nick: '오월', title: '퇴근길에 읽기 좋은 얇은 책 세 권', body: '얇아서 가방에 넣고 다니기 편하고, 돌려 읽기에도 부담이 없어요.', at: '2026-09-28T08:20:00' });
+      add('post', 'p2', { topic: 'underline', nick: '밑줄러', title: '오늘의 밑줄: 문장을 고르는 기준', body: '여러분은 어떤 문장에 밑줄을 긋나요?', at: '2026-09-25T22:40:00' });
+      add('post', 'p3', { topic: 'discuss', nick: '새벽서가', title: '책은 끝까지 읽어야 할까요?', body: '중간에 덮은 책도 후기를 남겨도 될까요? 의견이 궁금합니다.', at: '2026-09-22T19:05:00' });
+      add('comment', 'c1', { postId: 'p3', nick: '오월', text: '덮은 이유를 적는 것도 좋은 후기라고 생각해요.', at: '2026-09-22T20:10:00' });
+      return R;
+    };
+
+    // ---- 2-3. 메모리 보관 + 동기화 ----
+    let rows = [];          // 서버(또는 로컬)에서 받아온 전체 행
+    let store = {};         // kind별로 풀어둔 목록
+    let lastSig = null;     // 마지막으로 본 변경 서명
+    let ready = false;      // 첫 불러오기 완료 여부
+    let loadError = false;
+    let pendingRender = false;
+
+    const rebuild = () => {
+      store = Object.fromEntries(KINDS.map((k) => [k, []]));
+      rows.forEach((r) => store[r.kind]?.push({ id: r.id, ...r.data }));
+    };
+    rebuild();
+
+    // 입력 중이거나 모달이 열려 있으면 화면 갱신을 잠시 미룸
+    const busy = () => {
+      const el = document.activeElement;
+      const typing = /^(INPUT|TEXTAREA)$/.test(el?.tagName || '') && !panel.contains(el);
+      return modal.classList.contains('is-open') || $('#lightbox').classList.contains('is-open') || typing;
+    };
+    const softRender = () => { if (busy()) { pendingRender = true; return; } pendingRender = false; render(); };
+
+    const refresh = async (force = false) => {
+      try {
+        const sig = await backend.signature();
+        if (!force && ready && sig === lastSig) return;
+        rows = await backend.fetchAll();
+        lastSig = sig; ready = true; loadError = false;
+        rebuild(); softRender();
+      } catch {
+        if (!ready) { loadError = true; softRender(); }
+      }
+    };
+
+    // 저장(추가/수정): 화면에 먼저 반영 → 서버에 저장 → 실패하면 서버 상태로 되돌림
+    const put = async (kind, id, data) => {
+      const i = rows.findIndex((r) => r.id === id);
+      if (i >= 0) rows[i] = { id, kind, data }; else rows.push({ id, kind, data });
+      rebuild(); render();
+      try { await backend.upsert(kind, id, data); lastSig = null; return true; }
+      catch { toast('저장하지 못했어요. 잠시 후 다시 시도해 주세요.'); await refresh(true); return false; }
+    };
+    // 삭제 (여러 개 한 번에)
+    const del = async (ids) => {
+      rows = rows.filter((r) => !ids.includes(r.id));
+      rebuild(); render();
+      try { await backend.remove(ids); lastSig = null; return true; }
+      catch { toast('삭제하지 못했어요. 잠시 후 다시 시도해 주세요.'); await refresh(true); return false; }
+    };
+    const dataOf = ({ id, ...rest }) => rest;
+
     const NICK_KEY = 'timeline.nick';
-
-    const seed = () => ({
-      books: [
-        { id: 'b1', title: '자기만의 방', author: '버지니아 울프', cover: null, at: '2026-09-01T10:00:00', reviews: [
-          { id: 'r1', nick: '새벽서가', at: '2026-09-20T21:10:00', text: '글을 쓰려면 돈과 자기만의 공간이 필요하다는 이야기에 오래 머물렀어요.' },
-          { id: 'r2', nick: '오월', at: '2026-09-18T09:30:00', text: '밑줄이 가장 많이 그어진 책이 된 것 같아요. 돌려 읽는 맛이 있어요.' },
-          { id: 'r3', nick: '밑줄러', at: '2026-09-15T22:00:00', text: '두 번째 읽는데, 처음에는 놓쳤던 유머가 보여요.' },
-          { id: 'r4', nick: '책갈피', at: '2026-09-12T13:20:00', text: '강연을 옮긴 글이라 소리 내어 읽으면 더 좋아요.' },
-          { id: 'r5', nick: '달그림자', at: '2026-09-10T20:45:00', text: '나에게 자기만의 방은 어디일까 생각하게 됐습니다.' },
-        ] },
-        { id: 'b2', title: '데미안', author: '헤르만 헤세', cover: null, at: '2026-08-12T10:00:00', reviews: [
-          { id: 'r6', nick: '낮잠', at: '2026-08-30T23:10:00', text: '학창 시절에 읽을 때와 전혀 다른 책이었어요.' },
-          { id: 'r7', nick: '오월', at: '2026-08-25T18:00:00', text: '앞부분만 다시 읽어도 좋았습니다.' },
-        ] },
-        { id: 'b3', title: '월든', author: '헨리 데이비드 소로', cover: null, at: '2026-07-02T10:00:00', reviews: [] },
-      ],
-      posts: [
-        { id: 'p1', topic: 'recommend', nick: '낮잠', at: '2026-09-28T08:20:00', title: '퇴근길에 읽기 좋은 얇은 책 세 권', body: '지하철에서 한 번에 한 장씩 읽기 좋은 책들을 골랐어요.\n얇아서 가방에 넣고 다니기 편하고, 돌려 읽기에도 부담이 없습니다.\n다음 교환 때 한 권씩 가져가 볼게요.', comments: [{ id: 'c1', nick: '오월', at: '2026-09-28T12:00:00', text: '저도 얇은 책부터 교환하고 싶어요!' }] },
-        { id: 'p2', topic: 'underline', nick: '밑줄러', at: '2026-09-25T22:40:00', title: '오늘의 밑줄: 문장을 고르는 기준', body: '밑줄을 긋는 기준은 사람마다 다르다는 게 신기해요.\n저는 어떤 장면이 떠오르는 문장에 긋고, 어떤 분은 정보가 담긴 문장에 긋더라고요.\n여러분은 어떤 문장에 밑줄을 긋나요?', comments: [] },
-        { id: 'p3', topic: 'discuss', nick: '새벽서가', at: '2026-09-22T19:05:00', title: '책은 끝까지 읽어야 할까요?', body: '교환독서를 하다 보면 끝까지 못 읽고 넘기는 책이 생겨요.\n중간에 덮은 책도 후기를 남겨도 될까요? 의견이 궁금합니다.', comments: [
-          { id: 'c2', nick: '책갈피', at: '2026-09-22T20:10:00', text: '덮은 이유를 적는 것도 좋은 후기라고 생각해요.' },
-          { id: 'c3', nick: '달그림자', at: '2026-09-23T08:00:00', text: '저도 동의해요. 어디까지 읽었는지만 적어 주면 좋겠어요.' },
-        ] },
-        { id: 'p4', topic: 'recommend', nick: '오월', at: '2026-09-18T14:00:00', title: '겨울에 다시 꺼내 읽고 싶은 소설', body: '날이 추워지면 생각나는 책들이 있어요. 목록을 천천히 채워 볼게요.', comments: [] },
-        { id: 'p5', topic: 'underline', nick: '책갈피', at: '2026-09-14T17:30:00', title: '돌려 읽다 발견한 남의 메모', body: '앞사람이 남긴 메모를 발견하면 괜히 반가워요.\n연필로 쓴 작은 글씨가 대화를 거는 것 같아요.', comments: [] },
-        { id: 'p6', topic: 'discuss', nick: '달그림자', at: '2026-09-09T21:15:00', title: '교환 기간은 2주가 적당할까요, 3주가 적당할까요?', body: '바쁜 달에는 2주가 짧게 느껴져요. 여러분은 어떠세요?', comments: [] },
-      ],
-    });
-
-    let storageWarned = false;
-    const load = () => { try { const r = localStorage.getItem(KEY); return r ? JSON.parse(r) : null; } catch { return null; } };
-    const save = () => {
-      try { localStorage.setItem(KEY, JSON.stringify(db)); return 'ok'; }
-      catch (err) { return err && /quota/i.test(err.name) ? 'quota' : 'off'; }
-    };
-    let db = load() || seed();
-    save();
-
-    // 저장 실행: 용량 초과면 되돌리고, 저장 불가 환경이면 메모리에만 유지
-    const commit = (fn) => {
-      const snap = JSON.stringify(db);
-      fn();
-      const r = save();
-      if (r === 'quota') { db = JSON.parse(snap); toast('저장 공간이 부족해요. 더 작은 이미지를 써 주세요.'); return false; }
-      if (r === 'off' && !storageWarned) { storageWarned = true; toast('이 브라우저에서는 저장이 꺼져 있어 새로고침하면 사라져요.'); }
-      return true;
-    };
-
     const getNick = () => { try { return localStorage.getItem(NICK_KEY) || ''; } catch { return ''; } };
     const setNick = (n) => { try { localStorage.setItem(NICK_KEY, n); } catch { /* 무시 */ } };
 
@@ -499,7 +554,6 @@
       return svgUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420"><rect width="300" height="420" fill="${bg}"/><rect x="36" y="60" width="40" height="5" rx="2.5" fill="#fff" fill-opacity=".7"/>${text}<circle cx="264" cy="384" r="7" fill="${bg === '#ff4500' ? '#fff' : '#ff4500'}"/></svg>`);
     };
     const coverOf = (b) => b.cover || coverSvg(b.title);
-
     const readCover = (file) => new Promise((resolve, reject) => {
       const fr = new FileReader();
       fr.onerror = reject;
@@ -521,7 +575,9 @@
     // ================= 4. 페이지 렌더링 =================
     const NAV = [['About', 'about'], ['Event', 'event'], ['Book', 'book'], ['People', 'people'], ['Timeline Life', 'life']];
     const cal = { y: new Date().getFullYear(), m: new Date().getMonth(), sel: null };
-    const shown = {}; // 책별로 현재 보여 주는 후기 개수
+    const shown = {};
+
+    const pageNotFound = (msg, href, label) => `<section class="page"><div class="page-inner"><p class="empty">${msg}</p><p style="margin-top:20px;text-align:center"><a class="btn" href="${href}">${label}</a></p></div></section>`;
 
     // ---- 홈 ----
     const pageHome = () => `
@@ -530,15 +586,9 @@
         <p class="hero-sub">교환독서회</p>
         <p class="hero-message">함께 책을 읽어요.</p>
         <div class="hero-line" aria-hidden="true"></div>
-        <ul class="cta-grid">
-          ${NAV.map(([label, path], i) => `<li><a class="btn${i ? '' : ' btn--primary'}" href="#/${path}">${label}</a></li>`).join('')}
-        </ul>
+        <ul class="cta-grid">${NAV.map(([label, path], i) => `<li><a class="btn${i ? '' : ' btn--primary'}" href="#/${path}">${label}</a></li>`).join('')}</ul>
         <ul class="gallery">
-          ${Object.entries(TOPICS).map(([k, t]) => `
-            <li><a class="card" href="#/life/${k}">
-              <img src="${t.img}" alt="${esc(t.alt)}">
-              <span class="card-cap"><strong>${t.page}</strong><span>${t.label} 글 모아보기</span></span>
-            </a></li>`).join('')}
+          ${Object.entries(TOPICS).map(([k, t]) => `<li><a class="card" href="#/life/${k}"><img src="${t.img}" alt="${esc(t.alt)}"><span class="card-cap"><strong>${t.page}</strong><span>${t.label} 글 모아보기</span></span></a></li>`).join('')}
         </ul>
       </div></section>`;
 
@@ -552,25 +602,24 @@
           <li class="info-card"><h3>밑줄과 후기를 남겨요</h3><p>Book에서 후기를, Timeline Life에서 밑줄과 이야기를 나눠요.</p></li>
           <li class="info-card"><h3>만나서 이야기해요</h3><p>Event의 일정에서 정기 모임 날짜와 장소를 확인하세요.</p></li>
         </ul>
-        <p class="note">이 사이트에 쓴 글과 후기는 지금 사용 중인 브라우저에 저장돼요.</p>
+        <p class="note">${REMOTE ? '일정, 책, 글, 멤버 정보는 이 사이트를 쓰는 모두에게 공유돼요. 누구나 수정할 수 있으니 서로 배려해 주세요.' : '지금은 데모 모드예요. 쓴 내용은 이 브라우저에만 저장됩니다.'}</p>
       </div></section>`;
 
-    // ---- Event: 달력 + 일정 버튼 ----
+    // ---- Event ----
     const calHTML = () => {
       const { y, m, sel } = cal;
       const first = new Date(y, m, 1).getDay();
       const days = new Date(y, m + 1, 0).getDate();
-      const now = new Date();
-      const todayS = ymd(now.getFullYear(), now.getMonth(), now.getDate());
+      const t = todayStr();
       let cells = '';
       for (let i = 0; i < first; i++) cells += '<span class="cal-day is-empty" aria-hidden="true"></span>';
       for (let d = 1; d <= days; d++) {
         const s = ymd(y, m, d);
-        const evs = EVENTS.filter((e) => e.date === s);
-        const cls = ['cal-day', s === todayS && 'is-today', evs.length && 'has-event', s === sel && 'is-sel'].filter(Boolean).join(' ');
-        cells += `<button type="button" class="${cls}" data-act="cal-day" data-date="${s}" aria-pressed="${s === sel}" aria-label="${m + 1}월 ${d}일${evs.length ? `, 일정 ${evs.length}건` : ''}">${d}</button>`;
+        const n = store.event.filter((e) => e.date === s).length;
+        const cls = ['cal-day', s === t && 'is-today', n && 'has-event', s === sel && 'is-sel'].filter(Boolean).join(' ');
+        cells += `<button type="button" class="${cls}" data-act="cal-day" data-date="${s}" aria-pressed="${s === sel}" aria-label="${m + 1}월 ${d}일${n ? `, 일정 ${n}건` : ''}">${d}</button>`;
       }
-      const selEvs = sel ? EVENTS.filter((e) => e.date === sel) : [];
+      const selEvs = sel ? store.event.filter((e) => e.date === sel) : [];
       const note = !sel ? '날짜를 누르면 그날의 일정이 표시돼요.'
         : selEvs.length ? `${evLabel(sel)}: ${selEvs.map((e) => esc(e.title)).join(', ')}` : `${evLabel(sel)}은 일정이 없어요.`;
       return `
@@ -581,47 +630,51 @@
             <button type="button" class="cal-nav" data-act="cal-next" aria-label="다음 달">&rsaquo;</button>
           </div>
           <div class="cal-grid">${[...'일월화수목금토'].map((w) => `<span class="cal-dow">${w}</span>`).join('')}${cells}</div>
-          <p class="cal-note">${note}</p>
+          <div class="cal-foot"><p class="cal-note">${note}</p>${sel ? `<button type="button" class="btn btn--small" data-act="event-new" data-date="${sel}">이 날 일정 추가</button>` : ''}</div>
         </div>`;
     };
 
     const pageEvent = () => {
-      const todayS = (() => { const n = new Date(); return ymd(n.getFullYear(), n.getMonth(), n.getDate()); })();
-      const list = [...EVENTS].sort((a, b) => a.date.localeCompare(b.date));
+      const t = todayStr();
+      const list = [...store.event].sort((a, b) => `${a.date}${a.time || ''}`.localeCompare(`${b.date}${b.time || ''}`));
       return `
         <section class="page"><div class="page-inner">
-          <div class="page-head"><h1>Event</h1><p>모임 일정을 달력과 버튼으로 한눈에 확인하세요.</p></div>
+          <div class="page-head"><h1>Event</h1><p>모임 일정을 달력과 버튼으로 한눈에 확인하세요. 누구나 일정을 추가하고 고칠 수 있어요.</p>
+            <div class="page-actions"><button type="button" class="btn btn--primary" data-act="event-new" data-date="">일정 추가</button></div></div>
           ${calHTML()}
           <h2 class="section-title">주요 일정</h2>
-          <ul class="grid">
-            ${list.map((e) => `
-              <li><button type="button" class="event-btn${e.date === cal.sel ? ' is-active' : ''}${e.date < todayS ? ' is-past' : ''}" data-act="event-pick" data-date="${e.date}">
+          ${list.length ? `<ul class="grid">${list.map((e) => `
+            <li class="ev-item">
+              <button type="button" class="event-btn${e.date === cal.sel ? ' is-active' : ''}${e.date < t ? ' is-past' : ''}" data-act="event-pick" data-date="${e.date}">
                 <span class="ev-date">${evLabel(e.date)}</span>
                 <span class="ev-title">${esc(e.title)}</span>
-                <span class="ev-meta"><b>시간</b>${esc(e.time)}</span>
-                <span class="ev-meta"><b>위치</b>${esc(e.place)}</span>
-              </button></li>`).join('')}
-          </ul>
+                <span class="ev-meta"><b>시간</b>${esc(e.time || '미정')}</span>
+                <span class="ev-meta"><b>위치</b>${esc(e.place || '미정')}</span>
+              </button>
+              <div class="ev-tools"><button type="button" class="mini" data-act="event-edit" data-id="${e.id}">수정</button><button type="button" class="mini" data-act="event-del" data-id="${e.id}">삭제</button></div>
+            </li>`).join('')}</ul>` : '<p class="empty">아직 등록된 일정이 없어요. 일정 추가로 첫 모임을 등록해 보세요.</p>'}
         </div></section>`;
     };
 
-    // ---- Book: 목록 ----
-    const pageBooks = () => `
-      <section class="page"><div class="page-inner">
-        <div class="page-head"><h1>Book</h1><p>우리가 돌려 읽은 책들이에요. 표지를 눌러 후기를 읽고, 직접 책을 등록할 수도 있어요.</p>
-          <div class="page-actions"><button type="button" class="btn btn--primary" data-act="book-new">글쓰기</button></div></div>
-        ${db.books.length ? `<ul class="grid book-grid">${db.books.map((b) => `
-          <li><a class="book-card" href="#/book/${b.id}"><img src="${coverOf(b)}" alt="${esc(b.title)} 표지"><span class="book-title">${esc(b.title)}</span></a></li>`).join('')}</ul>`
-          : '<p class="empty">아직 등록된 책이 없어요. 글쓰기로 첫 책을 등록해 보세요.</p>'}
-      </div></section>`;
+    // ---- Book ----
+    const pageBooks = () => {
+      const books = [...store.book].sort(newest);
+      return `
+        <section class="page"><div class="page-inner">
+          <div class="page-head"><h1>Book</h1><p>우리가 돌려 읽은 책들이에요. 표지를 눌러 후기를 읽고, 직접 책을 등록할 수도 있어요.</p>
+            <div class="page-actions"><button type="button" class="btn btn--primary" data-act="book-new">글쓰기</button></div></div>
+          ${books.length ? `<ul class="grid book-grid">${books.map((b) => `<li><a class="book-card" href="#/book/${b.id}"><img src="${coverOf(b)}" alt="${esc(b.title)} 표지"><span class="book-title">${esc(b.title)}</span></a></li>`).join('')}</ul>`
+            : '<p class="empty">아직 등록된 책이 없어요. 글쓰기로 첫 책을 등록해 보세요.</p>'}
+        </div></section>`;
+    };
 
-    // ---- Book: 상세 + 후기 ----
     const pageBook = (id) => {
-      const b = db.books.find((x) => x.id === id);
+      const b = store.book.find((x) => x.id === id);
       if (!b) return pageNotFound('책을 찾을 수 없어요.', '#/book', '책 목록으로');
+      const all = store.review.filter((r) => r.bookId === id).sort(newest);
       const n = shown[id] ?? 3;
-      const list = b.reviews.slice(0, n);
-      const left = b.reviews.length - list.length;
+      const list = all.slice(0, n);
+      const left = all.length - list.length;
       return `
         <section class="page"><div class="page-inner">
           <a class="back" href="#/book">책 목록으로</a>
@@ -635,13 +688,12 @@
                 <button type="button" class="btn btn--small" data-act="book-edit" data-id="${b.id}">수정</button>
                 <button type="button" class="btn btn--small btn--danger" data-act="book-del" data-id="${b.id}">삭제</button>
               </div>
-              <h2 class="section-title" style="margin-top:48px">후기 ${b.reviews.length}건</h2>
-              ${list.length ? `<ul class="review-list">${list.map((r) => `
-                <li class="review"><div class="who"><b>${esc(r.nick)}</b><span>${fmtDate(r.at)}</span></div><p>${esc(r.text)}</p></li>`).join('')}</ul>`
+              <h2 class="section-title" style="margin-top:48px">후기 ${all.length}건</h2>
+              ${list.length ? `<ul class="review-list">${list.map((r) => `<li class="review"><div class="who"><b>${esc(r.nick)}</b><span>${fmtDate(r.at)}</span><button type="button" class="mini" data-act="review-del" data-id="${r.id}">삭제</button></div><p>${esc(r.text)}</p></li>`).join('')}</ul>`
                 : '<p class="empty">아직 후기가 없어요. 첫 후기를 남겨 보세요.</p>'}
               <div class="more-row">
                 ${left > 0 ? `<button type="button" class="btn btn--small" data-act="review-more" data-id="${b.id}">더보기 (${left}건 남음)</button>` : ''}
-                ${n > 3 && b.reviews.length > 3 ? `<button type="button" class="btn btn--small btn--danger" data-act="review-less" data-id="${b.id}">접기</button>` : ''}
+                ${n > 3 && all.length > 3 ? `<button type="button" class="btn btn--small btn--danger" data-act="review-less" data-id="${b.id}">접기</button>` : ''}
               </div>
             </div>
           </div>
@@ -650,41 +702,38 @@
 
     // ---- People ----
     const activity = (nick) => ({
-      posts: db.posts.filter((p) => p.nick === nick).length,
-      reviews: db.books.reduce((a, b) => a + b.reviews.filter((r) => r.nick === nick).length, 0),
-      comments: db.posts.reduce((a, p) => a + p.comments.filter((c) => c.nick === nick).length, 0),
+      posts: store.post.filter((p) => p.nick === nick).length,
+      reviews: store.review.filter((r) => r.nick === nick).length,
+      comments: store.comment.filter((c) => c.nick === nick).length,
     });
-    const pagePeople = () => `
-      <section class="page"><div class="page-inner">
-        <div class="page-head"><h1>People</h1><p>함께 읽는 사람들이에요. 아이콘을 누르면 그동안의 이력을 볼 수 있어요.</p></div>
-        <ul class="grid">
-          ${PEOPLE.map((p) => `<li><button type="button" class="person" data-act="person" data-id="${p.id}"><span class="avatar">${iconSvg(p.icon)}</span>${esc(p.nick)}</button></li>`).join('')}
-        </ul>
-      </div></section>`;
+    const pagePeople = () => {
+      const people = [...store.person].sort(oldest);
+      return `
+        <section class="page"><div class="page-inner">
+          <div class="page-head"><h1>People</h1><p>함께 읽는 사람들이에요. 아이콘을 누르면 그동안의 이력을 볼 수 있고, 누구나 멤버 정보를 추가하고 고칠 수 있어요.</p>
+            <div class="page-actions"><button type="button" class="btn btn--primary" data-act="person-new">멤버 추가</button></div></div>
+          ${people.length ? `<ul class="grid">${people.map((p) => `<li><button type="button" class="person" data-act="person" data-id="${p.id}"><span class="avatar">${iconSvg(p.icon)}</span>${esc(p.nick)}</button></li>`).join('')}</ul>`
+            : '<p class="empty">아직 멤버가 없어요. 멤버 추가로 나를 등록해 보세요.</p>'}
+        </div></section>`;
+    };
 
-    // ---- Timeline Life: 게시판 ----
+    // ---- Timeline Life ----
     const tagBtn = (k) => `<a class="tag-btn tag-btn--${k}" href="#/life/${k}" title="${TOPICS[k].page}">${TOPICS[k].label}</a>`;
     const pageLife = (topic) => {
       const t = TOPICS[topic];
-      const posts = db.posts.filter((p) => !t || p.topic === topic).sort((a, b) => b.at.localeCompare(a.at));
+      const posts = store.post.filter((p) => !t || p.topic === topic).sort(newest);
       const tabs = [['', '전체', '#/life'], ...Object.entries(TOPICS).map(([k, v]) => [k, `${v.label} · ${v.page}`, `#/life/${k}`])];
       return `
         <section class="page"><div class="page-inner">
-          ${t ? `
-            <div class="topic-head">
-              <img src="${t.img}" alt="${esc(t.alt)}">
-              <div class="page-head" style="margin:0"><h1>${t.page}</h1><p>${t.desc}</p></div>
-            </div>` : `
-            <div class="page-head"><h1>Timeline Life</h1><p>책 이야기도, 책 밖의 이야기도 자유롭게 남기는 게시판이에요.</p></div>`}
+          ${t ? `<div class="topic-head"><img src="${t.img}" alt="${esc(t.alt)}"><div class="page-head" style="margin:0"><h1>${t.page}</h1><p>${t.desc}</p></div></div>`
+            : '<div class="page-head"><h1>Timeline Life</h1><p>책 이야기도, 책 밖의 이야기도 자유롭게 남기는 게시판이에요.</p></div>'}
           <div class="page-actions" style="margin:0 0 28px"><button type="button" class="btn btn--primary" data-act="post-new" data-topic="${topic || ''}">글쓰기</button></div>
-          <nav class="tabs" aria-label="주제 구분">
-            ${tabs.map(([k, label, href]) => `<a class="tab" href="${href}"${k === (topic || '') ? ' aria-current="page"' : ''}>${label}</a>`).join('')}
-          </nav>
+          <nav class="tabs" aria-label="주제 구분">${tabs.map(([k, label, href]) => `<a class="tab" href="${href}"${k === (topic || '') ? ' aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
           ${posts.length ? `<ul class="board">${posts.map((p) => `
             <li class="post-row">
               <div class="post-main">
                 <a class="post-title" href="#/life/post/${p.id}">${esc(p.title)}</a>
-                <div class="post-meta"><span>${esc(p.nick)}</span><span>${fmtDate(p.at)}</span><span>댓글 ${p.comments.length}</span></div>
+                <div class="post-meta"><span>${esc(p.nick)}</span><span>${fmtDate(p.at)}</span><span>댓글 ${store.comment.filter((c) => c.postId === p.id).length}</span></div>
               </div>
               ${tagBtn(p.topic)}
             </li>`).join('')}</ul>` : '<p class="empty">아직 글이 없어요. 첫 글을 남겨 보세요.</p>'}
@@ -692,8 +741,9 @@
     };
 
     const pagePost = (id) => {
-      const p = db.posts.find((x) => x.id === id);
+      const p = store.post.find((x) => x.id === id);
       if (!p) return pageNotFound('글을 찾을 수 없어요.', '#/life', '게시판으로');
+      const comments = store.comment.filter((c) => c.postId === id).sort(oldest);
       return `
         <section class="page"><div class="page-inner">
           <a class="back" href="#/life/${p.topic}">${TOPICS[p.topic].page} 목록으로</a>
@@ -704,9 +754,8 @@
             <button type="button" class="btn btn--small" data-act="post-edit" data-id="${p.id}">수정</button>
             <button type="button" class="btn btn--small btn--danger" data-act="post-del" data-id="${p.id}">삭제</button>
           </div>
-          <h2 class="section-title">댓글 ${p.comments.length}개</h2>
-          ${p.comments.length ? `<ul class="review-list" style="max-width:640px">${p.comments.map((c) => `
-            <li class="review"><div class="who"><b>${esc(c.nick)}</b><span>${fmtDate(c.at)}</span></div><p>${esc(c.text)}</p></li>`).join('')}</ul>` : '<p class="empty" style="max-width:640px">첫 댓글을 남겨 보세요.</p>'}
+          <h2 class="section-title">댓글 ${comments.length}개</h2>
+          ${comments.length ? `<ul class="review-list" style="max-width:640px">${comments.map((c) => `<li class="review"><div class="who"><b>${esc(c.nick)}</b><span>${fmtDate(c.at)}</span><button type="button" class="mini" data-act="comment-del" data-id="${c.id}">삭제</button></div><p>${esc(c.text)}</p></li>`).join('')}</ul>` : '<p class="empty" style="max-width:640px">첫 댓글을 남겨 보세요.</p>'}
           <form class="comment-form" data-form="comment" data-id="${p.id}">
             <label class="field">닉네임<input name="nick" required maxlength="20" value="${esc(getNick())}"></label>
             <label class="field">댓글<textarea name="text" required maxlength="500" style="min-height:96px"></textarea></label>
@@ -715,15 +764,15 @@
         </div></section>`;
     };
 
-    const pageNotFound = (msg, href, label) => `
-      <section class="page"><div class="page-inner"><p class="empty">${msg}</p><p style="margin-top:20px;text-align:center"><a class="btn" href="${href}">${label}</a></p></div></section>`;
-
-    // ---- 라우터: 주소 해시 → 페이지 ----
+    // ---- 라우터 ----
     const TITLES = { about: 'About', event: 'Event', book: 'Book', people: 'People', life: 'Timeline Life' };
     const route = (resetScroll = true) => {
       const [p = '', a, b] = location.hash.replace(/^#\/?/, '').split('/');
       let html;
-      if (p === 'about') html = pageAbout();
+      if (!p) html = pageHome();
+      else if (loadError) html = `<section class="page"><div class="page-inner state"><div><p>${REMOTE ? '서버에 연결하지 못했어요.<br>SUPABASE_URL·KEY 설정과 SQL 실행 여부를 확인해 주세요.' : '데이터를 불러오지 못했어요.'}</p><button type="button" class="btn" data-act="retry">다시 시도</button></div></div></section>`;
+      else if (!ready) html = '<section class="page"><div class="page-inner state"><p>불러오는 중…</p></div></section>';
+      else if (p === 'about') html = pageAbout();
       else if (p === 'event') html = pageEvent();
       else if (p === 'book') html = a ? pageBook(a) : pageBooks();
       else if (p === 'people') html = pagePeople();
@@ -737,7 +786,7 @@
     const render = () => route(false);
     window.addEventListener('hashchange', () => route(true));
 
-    // ================= 5. 모달 (글쓰기 / 후기 / 이력) =================
+    // ================= 5. 모달과 입력 폼 =================
     const modal = $('#modal');
     const panel = $('#modalPanel');
     const openModal = (html) => {
@@ -746,10 +795,19 @@
       document.body.classList.add('no-scroll');
       (panel.querySelector('input:not([type=radio]):not([type=file]), textarea') || panel.querySelector('.modal-x')).focus();
     };
-    const closeModal = () => { modal.classList.remove('is-open'); document.body.classList.remove('no-scroll'); };
+    const closeModal = () => { if (panel.contains(document.activeElement)) document.activeElement.blur(); modal.classList.remove('is-open'); document.body.classList.remove('no-scroll'); if (pendingRender) softRender(); };
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-
     const actions = (label = '저장') => `<div class="form-actions"><button type="button" class="btn" data-act="modal-close">취소</button><button class="btn btn--primary" type="submit">${label}</button></div>`;
+
+    const eventForm = (e, date) => openModal(`
+      <h2>${e ? '일정 수정' : '일정 추가'}</h2>
+      <form data-form="event" data-id="${e ? e.id : ''}">
+        <label class="field">일정 제목<input name="title" required maxlength="60" value="${esc(e?.title)}"></label>
+        <label class="field">날짜<input type="date" name="date" required value="${esc(e?.date || date || '')}"></label>
+        <label class="field">시간<input type="time" name="time" value="${esc(e?.time)}"></label>
+        <label class="field">위치<input name="place" maxlength="60" value="${esc(e?.place)}"></label>
+        ${actions()}
+      </form>`);
 
     const bookForm = (b) => openModal(`
       <h2>${b ? '책 수정' : '책 등록'}</h2>
@@ -781,23 +839,49 @@
         ${actions()}
       </form>`);
 
+    const personForm = (p) => openModal(`
+      <h2>${p ? '프로필 수정' : '멤버 추가'}</h2>
+      <form data-form="person" data-id="${p ? p.id : ''}">
+        <label class="field">닉네임<input name="nick" required maxlength="20" value="${esc(p ? p.nick : getNick())}"></label>
+        <fieldset class="seg"><legend>아이콘</legend><div class="seg-row icon-pick">
+          ${Object.keys(ICONS).map((k, i) => `<label><input type="radio" name="icon" value="${k}"${(p ? p.icon : 'book') === k ? ' checked' : ''} aria-label="${k}"><span class="avatar" style="border:2px solid transparent">${iconSvg(k)}</span></label>`).join('')}
+        </div></fieldset>
+        <label class="field">가입일<input type="date" name="joined" required value="${esc(p?.joined || todayStr())}"></label>
+        ${actions()}
+      </form>`);
+
     const personModal = (id) => {
-      const p = PEOPLE.find((x) => x.id === id); if (!p) return;
+      const p = store.person.find((x) => x.id === id);
+      if (!p) { closeModal(); return; }
       const a = activity(p.nick);
+      const hs = store.history.filter((h) => h.personId === id).sort((x, y) => (x.date || '').localeCompare(y.date || '') || oldest(x, y));
       openModal(`
         <div style="display:flex;gap:16px;align-items:center;margin-bottom:4px"><span class="avatar avatar--lg">${iconSvg(p.icon)}</span>
-          <div><h2 style="margin:0;padding:0">${esc(p.nick)}</h2><p style="color:var(--muted)">${p.joined} 가입</p></div></div>
+          <div style="min-width:0"><h2 style="margin:0;padding:0;overflow-wrap:anywhere">${esc(p.nick)}</h2><p style="color:var(--muted)">${esc((p.joined || '').replace(/-/g, '.'))} 가입</p></div></div>
         <div class="stats"><span>게시글 ${a.posts}</span><span>후기 ${a.reviews}</span><span>댓글 ${a.comments}</span></div>
-        <ul class="history">${p.history.map(([d, t]) => `<li><time>${d}</time>${esc(t)}</li>`).join('')}</ul>`);
+        <h3 class="modal-sub" style="margin-top:0">이력</h3>
+        ${hs.length ? `<ul class="history">${hs.map((h) => `<li><div><time>${esc(h.date)}</time>${esc(h.text)}</div><button type="button" class="mini" data-act="history-del" data-id="${h.id}" data-pid="${id}" aria-label="이력 삭제">삭제</button></li>`).join('')}</ul>` : '<p class="empty">아직 이력이 없어요.</p>'}
+        <form class="inline-form" data-form="history" data-id="${id}">
+          <h3 class="modal-sub" style="margin:0 0 8px">이력 추가</h3>
+          <label class="field">시기<input name="date" required maxlength="12" placeholder="예: 2026.10"></label>
+          <label class="field">내용<input name="text" required maxlength="100"></label>
+          <button class="btn btn--primary" type="submit">이력 추가</button>
+        </form>
+        <div class="form-actions" style="margin-top:24px">
+          <button type="button" class="btn btn--small btn--danger" data-act="person-del" data-id="${id}">멤버 삭제</button>
+          <button type="button" class="btn btn--small" data-act="person-edit" data-id="${id}">프로필 수정</button>
+        </div>`);
     };
 
     // ================= 6. 클릭 / 제출 처리 (이벤트 위임) =================
-    document.addEventListener('click', (e) => {
+    document.addEventListener('click', async (e) => {
       const t = e.target.closest('[data-act]');
       if (!t) return;
-      const { act, id, date, topic } = t.dataset;
+      const { act, id, date, topic, pid } = t.dataset;
       switch (act) {
         case 'modal-close': closeModal(); break;
+        case 'retry': loadError = false; render(); refresh(true); break;
+        // 달력
         case 'cal-prev': cal.m--; if (cal.m < 0) { cal.m = 11; cal.y--; } render(); break;
         case 'cal-next': cal.m++; if (cal.m > 11) { cal.m = 0; cal.y++; } render(); break;
         case 'cal-day': cal.sel = cal.sel === date ? null : date; render(); break;
@@ -807,28 +891,49 @@
           $('.cal')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
           break;
         }
+        // 일정
+        case 'event-new': eventForm(null, date); break;
+        case 'event-edit': eventForm(store.event.find((x) => x.id === id)); break;
+        case 'event-del': if (confirm('이 일정을 삭제할까요?')) { await del([id]); toast('삭제했어요.'); } break;
+        // 책 / 후기
         case 'book-new': bookForm(null); break;
-        case 'book-edit': bookForm(db.books.find((b) => b.id === id)); break;
+        case 'book-edit': bookForm(store.book.find((b) => b.id === id)); break;
         case 'book-del':
           if (confirm('이 책과 등록된 후기를 모두 삭제할까요?')) {
-            commit(() => { db.books = db.books.filter((b) => b.id !== id); });
-            location.hash = '#/book'; toast('삭제했어요.');
+            location.hash = '#/book';
+            await del([id, ...store.review.filter((r) => r.bookId === id).map((r) => r.id)]);
+            toast('삭제했어요.');
           }
           break;
         case 'review-new': reviewForm(id); break;
+        case 'review-del': if (confirm('이 후기를 삭제할까요?')) { await del([id]); toast('삭제했어요.'); } break;
         case 'review-more': shown[id] = (shown[id] ?? 3) + 3; render(); break;
         case 'review-less': shown[id] = 3; render(); break;
+        // 멤버
         case 'person': personModal(id); break;
+        case 'person-new': personForm(null); break;
+        case 'person-edit': personForm(store.person.find((p) => p.id === id)); break;
+        case 'person-del':
+          if (confirm('이 멤버와 이력을 삭제할까요?')) {
+            closeModal();
+            await del([id, ...store.history.filter((h) => h.personId === id).map((h) => h.id)]);
+            toast('삭제했어요.');
+          }
+          break;
+        case 'history-del': await del([id]); personModal(pid); break;
+        // 게시판
         case 'post-new': postForm(null, topic); break;
-        case 'post-edit': postForm(db.posts.find((p) => p.id === id)); break;
+        case 'post-edit': postForm(store.post.find((p) => p.id === id)); break;
         case 'post-del': {
-          const post = db.posts.find((p) => p.id === id);
+          const post = store.post.find((p) => p.id === id);
           if (post && confirm('이 글과 댓글을 삭제할까요?')) {
-            commit(() => { db.posts = db.posts.filter((p) => p.id !== id); });
-            location.hash = `#/life/${post.topic}`; toast('삭제했어요.');
+            location.hash = `#/life/${post.topic}`;
+            await del([id, ...store.comment.filter((c) => c.postId === id).map((c) => c.id)]);
+            toast('삭제했어요.');
           }
           break;
         }
+        case 'comment-del': if (confirm('이 댓글을 삭제할까요?')) { await del([id]); toast('삭제했어요.'); } break;
       }
     });
 
@@ -839,33 +944,43 @@
       const d = new FormData(f);
       const val = (k) => String(d.get(k) || '').trim();
       const { form: kind, id } = f.dataset;
+      const now = new Date().toISOString();
       if (val('nick')) setNick(val('nick'));
+      const btn = f.querySelector('[type=submit]');
+      if (btn) btn.disabled = true;
+      let done = false;
 
-      if (kind === 'book') {
+      if (kind === 'event') {
+        const old = store.event.find((x) => x.id === id);
+        done = await put('event', id || uid(), { title: val('title'), date: val('date'), time: val('time'), place: val('place'), at: old?.at || now });
+        if (done) cal.sel = val('date');
+      } else if (kind === 'book') {
         let cover;
         const file = d.get('cover');
-        if (file && file.size) {
-          try { cover = await readCover(file); } catch { toast('이미지를 읽지 못했어요. 다른 파일을 써 주세요.'); return; }
-        }
-        const ok = commit(() => {
-          if (id) { const b = db.books.find((x) => x.id === id); b.title = val('title'); b.author = val('author'); if (cover) b.cover = cover; }
-          else db.books.unshift({ id: uid(), title: val('title'), author: val('author'), cover: cover || null, at: new Date().toISOString(), reviews: [] });
-        });
-        if (ok) { closeModal(); render(); toast('저장했어요.'); }
+        if (file && file.size) { try { cover = await readCover(file); } catch { toast('이미지를 읽지 못했어요. 다른 파일을 써 주세요.'); if (btn) btn.disabled = false; return; } }
+        const old = store.book.find((x) => x.id === id);
+        done = await put('book', id || uid(), { ...(old ? dataOf(old) : { cover: null, at: now }), title: val('title'), author: val('author'), ...(cover ? { cover } : {}) });
       } else if (kind === 'review') {
-        const ok = commit(() => { db.books.find((b) => b.id === id).reviews.unshift({ id: uid(), nick: val('nick'), text: val('text'), at: new Date().toISOString() }); });
-        if (ok) { closeModal(); render(); toast('후기를 등록했어요.'); }
+        done = await put('review', uid(), { bookId: id, nick: val('nick'), text: val('text'), at: now });
       } else if (kind === 'post') {
-        let target = id;
-        const ok = commit(() => {
-          if (id) { const p = db.posts.find((x) => x.id === id); Object.assign(p, { nick: val('nick'), topic: val('topic'), title: val('title'), body: val('body') }); }
-          else { target = uid(); db.posts.unshift({ id: target, topic: val('topic'), nick: val('nick'), at: new Date().toISOString(), title: val('title'), body: val('body'), comments: [] }); }
-        });
-        if (ok) { closeModal(); toast('저장했어요.'); if (id) render(); else location.hash = `#/life/post/${target}`; }
+        const old = store.post.find((x) => x.id === id);
+        const pid = id || uid();
+        done = await put('post', pid, { ...(old ? dataOf(old) : { at: now }), nick: val('nick'), topic: val('topic'), title: val('title'), body: val('body') });
+        if (done && !id) { closeModal(); toast('저장했어요.'); location.hash = `#/life/post/${pid}`; return; }
       } else if (kind === 'comment') {
-        const ok = commit(() => { db.posts.find((p) => p.id === id).comments.push({ id: uid(), nick: val('nick'), text: val('text'), at: new Date().toISOString() }); });
-        if (ok) { render(); toast('댓글을 등록했어요.'); }
+        done = await put('comment', uid(), { postId: id, nick: val('nick'), text: val('text'), at: now });
+        if (done) toast('댓글을 등록했어요.');
+        return;
+      } else if (kind === 'person') {
+        const old = store.person.find((x) => x.id === id);
+        done = await put('person', id || uid(), { ...(old ? dataOf(old) : { at: now }), nick: val('nick'), icon: val('icon') || 'book', joined: val('joined') });
+        if (done && id) { personModal(id); toast('저장했어요.'); return; }
+      } else if (kind === 'history') {
+        done = await put('history', uid(), { personId: id, date: val('date'), text: val('text'), at: now });
+        if (done) personModal(id);
+        return;
       }
+      if (done) { closeModal(); toast('저장했어요.'); } else if (btn) btn.disabled = false;
     });
 
     // ================= 7. 헤더 / 메뉴 / 위로 가기 =================
@@ -874,15 +989,11 @@
     const nav = $('#siteNav');
     const toTop = $('#toTop');
     const SCROLL_THRESHOLD = 200;
-
-    // 모바일 햄버거 펼치기/접기 (체크박스 상태와 aria 속성 동기화)
     navToggle.addEventListener('change', () => navToggle.setAttribute('aria-expanded', navToggle.checked));
     const closeNav = () => { navToggle.checked = false; navToggle.setAttribute('aria-expanded', 'false'); };
     nav.querySelectorAll('a').forEach((l) => l.addEventListener('click', closeNav));
     window.addEventListener('hashchange', closeNav);
     document.addEventListener('click', (e) => { if (navToggle.checked && !header.contains(e.target)) closeNav(); });
-
-    // 200px 이상 스크롤: 헤더 어둡게 + 위로 가기 버튼 표시
     const handleScroll = () => {
       const scrolled = window.scrollY > SCROLL_THRESHOLD;
       header.classList.toggle('is-scrolled', scrolled);
@@ -895,31 +1006,34 @@
     const lightbox = $('#lightbox');
     const lightboxImg = $('#lightboxImg');
     const lightboxClose = $('#lightboxClose');
-    const openLightbox = (img) => {
-      lightboxImg.src = img.src; lightboxImg.alt = img.alt;
-      lightbox.classList.add('is-open'); document.body.classList.add('no-scroll'); lightboxClose.focus();
-    };
-    const closeLightbox = () => {
-      lightbox.classList.remove('is-open');
-      if (!modal.classList.contains('is-open')) document.body.classList.remove('no-scroll');
-    };
+    const openLightbox = (img) => { lightboxImg.src = img.src; lightboxImg.alt = img.alt; lightbox.classList.add('is-open'); document.body.classList.add('no-scroll'); lightboxClose.focus(); };
+    const closeLightbox = () => { lightbox.classList.remove('is-open'); if (!modal.classList.contains('is-open')) document.body.classList.remove('no-scroll'); };
     document.addEventListener('click', (e) => { const img = e.target.closest('.zoomable'); if (img) openLightbox(img); });
     document.addEventListener('keydown', (e) => {
       const img = e.target.closest?.('.zoomable');
       if (img && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openLightbox(img); }
     });
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox || e.target === lightboxClose) closeLightbox(); });
-
-    // ESC: 열려 있는 라이트박스 또는 모달 닫기
     document.addEventListener('keydown', (e) => {
       if (e.key !== 'Escape') return;
       if (lightbox.classList.contains('is-open')) closeLightbox();
       else if (modal.classList.contains('is-open')) closeModal();
     });
 
-    // ================= 9. 시작 =================
+    // ================= 9. 시작 + 주기적 동기화 =================
+    if (!REMOTE) {
+      const note = $('#modeNote');
+      note.hidden = false;
+      note.textContent = '데모 모드: 서버 설정 전이라 이 브라우저에만 저장돼요.';
+    }
     route(false);
     handleScroll();
+    refresh(true);
+
+    // 15초마다 다른 사람이 쓴 글이 있는지 확인 (탭이 보일 때만)
+    const tick = () => { if (document.hidden) return; if (pendingRender) softRender(); refresh(); };
+    setInterval(tick, 15000);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
   </script>
 </body>
 </html>
